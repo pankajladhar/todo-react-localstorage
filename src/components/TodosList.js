@@ -31,16 +31,16 @@ class TodosList extends React.Component {
         }).length
     };
     completed(){
-        let props = _.omit(this.state.props, 'todos');
-        props['todos'] =_.filter(this.state.props.todos , (todo) =>{
+        let props = _.omit(this.PROPS, 'todos');
+        props['todos'] =_.filter(this.PROPS.todos , (todo) =>{
             return todo.isCompleted == true
         });
         this.setState({props: props});
     };
 
     unCompleted(){
-        let props = _.omit(this.state.props, 'todos');
-        props['todos'] =_.filter(this.state.props.todos , (todo) =>{
+        let props = _.omit(this.PROPS, 'todos');
+        props['todos'] =_.filter(this.PROPS.todos , (todo) =>{
             return todo.isCompleted == false
         });
         this.setState({props: props});
