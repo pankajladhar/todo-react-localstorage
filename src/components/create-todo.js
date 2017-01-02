@@ -12,9 +12,13 @@ class CreateToDo extends React.Component{
     };
 
     renderError() {
+        const errorStyle = {
+            "color":'red',
+            "font-size": '25px',
+            "padding-bottom": '10px'
+        }
         if (!this.state.error) { return null; }
-
-        return <div style={{ color: 'red' }}>{this.state.error}</div>;
+        return <div style={errorStyle}>{this.state.error}</div>;
     };
 
     handleCreate(event) {
@@ -32,6 +36,7 @@ class CreateToDo extends React.Component{
         this.setState({ error: null });
         this.props.createTask(task);
         this.refs.createInput.value = '';
+        this.refs.createInput.focus();
     }
 
     validateInput(task) {
@@ -46,11 +51,13 @@ class CreateToDo extends React.Component{
 
     render(){
         return(
-            <form onSubmit={this.handleCreate}>
-                <input type="text" placeholder="What do I need to do?" ref="createInput" />
-                <Button text="Create" clickHandler={this.handleCreate} />
+            <div>
                 {this.renderError()}
-            </form>
+                <form onSubmit={this.handleCreate}>
+                    <input autoFocus type="text" placeholder="What do I need to do?" ref="createInput" />
+                    <Button text="Create" clickHandler={this.handleCreate} />
+                </form>
+            </div>
         )
     };
 }
