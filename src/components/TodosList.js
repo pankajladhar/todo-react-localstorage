@@ -72,6 +72,14 @@ class TodosList extends React.Component {
 
     }
 }
+
+TodosList.propTypes = {
+    todos : React.PropTypes.array.isRequired,
+    toggleTask: React.PropTypes.func.isRequired,
+    saveTask: React.PropTypes.func.isRequired,
+    deleteTask: React.PropTypes.func.isRequired
+}
+
 module.exports = {
     TodosList: TodosList
 }

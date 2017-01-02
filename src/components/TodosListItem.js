@@ -64,15 +64,15 @@ class TodosListItem extends React.Component {
                 {this.renderActionsSection()}
             </li>
         );
-    }
+    };
 
     onEditClick() {
         this.setState({ isEditing: true });
-    }
+    };
 
     onCancelClick() {
         this.setState({ isEditing: false });
-    }
+    };
 
     onSaveClick(event) {
         event.preventDefault();
@@ -81,8 +81,8 @@ class TodosListItem extends React.Component {
         const newTask = this.refs.editInput.value;
         this.props.saveTask(oldTask, newTask);
         this.setState({ isEditing: false });
-    }
-}
+    };
+};
 
 module.exports={
     TodosListItem : TodosListItem

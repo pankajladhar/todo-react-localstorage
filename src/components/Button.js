@@ -13,6 +13,11 @@ class Button extends React.Component{
     }
 }
 
+Button.propTypes = {
+    clickHandler : React.PropTypes.func.isRequired,
+    text : React.PropTypes.string.isRequired
+}
+
 module.exports ={
     Button : Button
 }

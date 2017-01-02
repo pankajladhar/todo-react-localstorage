@@ -12,6 +12,9 @@ import React from 'react';
         );
     }
 }
+TodosListHeader.propTypes ={
+    numberOfTasks : React.PropTypes.number.isRequired
+}
 
 module.exports={
     TodosListHeader: TodosListHeader

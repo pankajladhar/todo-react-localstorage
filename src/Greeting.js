@@ -8,6 +8,10 @@ let Greeting = (props) =>{
     )
 };
 
+Greeting.propTypes = {
+    message: React.PropTypes.string.isRequired
+};
+
 module.exports = {
     Greeting : Greeting
 }

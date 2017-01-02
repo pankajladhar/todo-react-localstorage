@@ -53,8 +53,11 @@ class CreateToDo extends React.Component{
             </form>
         )
     };
+}
 
-
+CreateToDo.propTypes = {
+    todos : React.PropTypes.array.isRequired,
+    createTask: React.PropTypes.func.isRequired
 }
 
 module.exports={
